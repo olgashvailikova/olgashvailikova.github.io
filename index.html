@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irina — Unity Developer Portfolio</title>
+  <meta name="description" content="Unity Developer portfolio — selected released mobile games developed or supported at Kidga Games." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #5b6475;
+      --line: #e5e7eb;
+      --accent: #0f1b35;
+      --accent-2: #2563eb;
+      --soft: #eef2ff;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(247, 248, 251, 0.78);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.15rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.11);
+      border-color: rgba(37, 99, 235, 0.28);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 74px 0 58px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      font-size: 0.78rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(3rem, 8vw, 5.9rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      color: var(--accent);
+    }
+
+    .hero-text {
+      font-size: 1.08rem;
+      color: #2d3442;
+      max-width: 610px;
+      margin: 0 0 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 395px;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85), transparent 30%),
+        linear-gradient(135deg, #d7f5e9 0%, #accbe6 36%, #62738e 100%);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.72);
+    }
+
+    .island {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 300px;
+      height: 210px;
+      transform: translate(-50%, -48%) rotateX(56deg) rotateZ(-38deg);
+      transform-style: preserve-3d;
+      background: linear-gradient(135deg, #79c455, #3f8b43);
+      border-radius: 42px 42px 60px 60px;
+      box-shadow: 24px 40px 0 #725334, 44px 66px 55px rgba(25, 43, 70, 0.45);
+    }
+
+    .island::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border-radius: 28px;
+      border: 10px solid rgba(255,255,255,0.34);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+    .tree {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 19px solid transparent;
+      border-right: 19px solid transparent;
+      border-bottom: 62px solid #1f7a4b;
+      filter: drop-shadow(0 18px 12px rgba(0,0,0,.18));
+    }
+
+    .tree.t1 { left: 18%; top: 22%; }
+    .tree.t2 { left: 63%; top: 18%; transform: scale(0.9); }
+    .tree.t3 { left: 74%; top: 51%; transform: scale(0.7); }
+    .tree.t4 { left: 33%; top: 58%; transform: scale(0.76); }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+      filter: blur(1px);
+    }
+
+    .orb.o1 { width: 92px; height: 92px; right: 12%; top: 16%; }
+    .orb.o2 { width: 56px; height: 56px; left: 10%; bottom: 18%; }
+    .orb.o3 { width: 120px; height: 120px; right: -20px; bottom: -16px; }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--soft);
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--accent);
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-lead {
+      margin: 0 0 26px;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1.02rem;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .about-card p {
+      margin: 0;
+      color: #303848;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      min-height: 244px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.045);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(37, 99, 235, 0.28);
+      box-shadow: var(--shadow);
+    }
+
+    .project-top {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .project-icon {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 auto;
+      border-radius: 16px;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.2), 0 10px 20px rgba(15,23,42,.12);
+    }
+
+    .g1 { background: linear-gradient(135deg, #6d28d9, #06b6d4); }
+    .g2 { background: linear-gradient(135deg, #0ea5e9, #111827); }
+    .g3 { background: linear-gradient(135deg, #84cc16, #b45309); }
+    .g4 { background: linear-gradient(135deg, #4338ca, #22c55e); }
+    .g5 { background: linear-gradient(135deg, #16a34a, #a3e635); }
+    .g6 { background: linear-gradient(135deg, #38bdf8, #65a30d); }
+    .g7 { background: linear-gradient(135deg, #22c55e, #f472b6); }
+    .g8 { background: linear-gradient(135deg, #7c3aed, #60a5fa); }
+    .g9 { background: linear-gradient(135deg, #f59e0b, #10b981); }
+    .g10 { background: linear-gradient(135deg, #facc15, #111827); }
+    .g11 { background: linear-gradient(135deg, #d97706, #334155); }
+    .g12 { background: linear-gradient(135deg, #1e3a8a, #fbbf24); }
+
+    .project-card h3 {
+      margin: 0;
+      color: var(--accent);
+      letter-spacing: -0.025em;
+      font-size: 1.13rem;
+      line-height: 1.15;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: #364052;
+      font-size: 0.94rem;
+      flex: 1;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .contact {
+      padding: 38px 0 70px;
+    }
+
+    .contact-card {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 28px;
+      padding: 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .contact-card .btn {
+      background: #fff;
+      color: var(--accent);
+      border-color: #fff;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 320px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .contact-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav {
+        height: auto;
+        padding: 17px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 4.4rem);
+      }
+
+      .hero-art {
+        min-height: 260px;
+        border-radius: 24px;
+      }
+
+      .island {
+        transform: translate(-50%, -48%) rotateX(56deg) rotateZ(-38deg) scale(.75);
+      }
+
+      section {
+        padding: 42px 0;
+      }
+
+      .about-card {
+        padding: 22px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#">Irina — Unity Developer</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a class="btn primary" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Mobile Game Developer / Unity Developer</div>
+            <h1>Irina — Unity Developer</h1>
+            <p class="hero-text">
+              Unity Developer with 7+ years of experience in game development and 30+ released mobile games.
+            </p>
+            <p class="hero-text">
+              Specialized in full-cycle mobile game development, gameplay systems, UI, monetization,
+              third-party SDK integrations, Firebase services, cloud saves and mobile optimization.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#projects">Selected Projects</a>
+              <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="mailto:your.email@example.com">Email</a>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="orb o1"></div>
+            <div class="orb o2"></div>
+            <div class="orb o3"></div>
+            <div class="island">
+              <div class="tree t1"></div>
+              <div class="tree t2"></div>
+              <div class="tree t3"></div>
+              <div class="tree t4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-title">
+            <div class="section-icon">◎</div>
+            <h2>About</h2>
+          </div>
+          <div class="about-card">
+            <p>
+              I am a Unity Developer with 7+ years of experience in game development, including 5+ years focused on Unity
+              and previous native Android development experience.
+            </p>
+            <p>
+              At Kidga Games, I worked on 30+ released mobile games across puzzle, arcade, word, logic, maze and
+              reflex-based genres. Many projects were developed from scratch: from the initial prototype and gameplay
+              systems to production-ready Android/iOS releases.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-title">
+            <div class="section-icon">◈</div>
+            <h2>Selected Projects</h2>
+          </div>
+          <p class="section-lead">
+            A selection of released mobile games developed or supported at Kidga Games. This is not a full list of all released titles.
+          </p>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g1">GR</div>
+                <div>
+                  <h3>Gravity Race</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity, from the initial prototype and gameplay systems to a production-ready mobile release.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.gravity.race" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g2">GL</div>
+                <div>
+                  <h3>Geometry Loop</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity, from the initial prototype and gameplay systems to Android/iOS production release.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.loop" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g3">WC</div>
+                <div>
+                  <h3>Word Craft</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a multi-mode word puzzle game.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.word.craft" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g4">V</div>
+                <div>
+                  <h3>Vectoria</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a logic/strategy puzzle game.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.vector" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g5">S</div>
+                <div>
+                  <h3>Snake it!</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a one-tap arcade/reflex game.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.snake.it" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g6">G</div>
+                <div>
+                  <h3>Golf Islands</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a mobile golf game with relaxed gameplay and level-based progression.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.golf" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g7">PP</div>
+                <div>
+                  <h3>Paradise Puzzle</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a mobile puzzle game with relaxing visual style and level-based gameplay.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.paradise.puzzle" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g8">LC</div>
+                <div>
+                  <h3>Logic Club</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a logic puzzle / brain-training game with multiple mini-games and varied gameplay mechanics.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.logic.club" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g9">EB</div>
+                <div>
+                  <h3>Elements Box</h3>
+                  <div class="meta">Solo Unity Developer</div>
+                </div>
+              </div>
+              <p>Built from scratch in Unity as a spatial logic puzzle game with path/maze-based puzzle flow and level progression.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.elements.flow" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g10">PM</div>
+                <div>
+                  <h3>Paxman / Maze Runner</h3>
+                  <div class="meta">Unity Developer, team project</div>
+                </div>
+              </div>
+              <p>Worked on meta-game systems, UI screens, animations, progression-related flows, mobile interface polish and production support.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.maze.paxman" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g11">CX</div>
+                <div>
+                  <h3>Cryptex / Word Cryptex</h3>
+                  <div class="meta">Unity Developer, team project</div>
+                </div>
+              </div>
+              <p>Worked on UI implementation, analytics events, advertising integration, monetization-related flows and production polish.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.cryptex" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-icon g12">+</div>
+                <div>
+                  <h3>Other Kidga Games</h3>
+                  <div class="meta">Additional released projects</div>
+                </div>
+              </div>
+              <p>Other released mobile puzzle, logic, word and arcade games. Work included Unity development, gameplay systems, UI, SDK integrations, ads, Firebase, cloud saves, localization, scalable architecture and release preparation.</p>
+              <a class="project-link" href="https://play.google.com/store/apps/developer?id=Kidga" target="_blank" rel="noopener">Google Play →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="contact-card">
+            <div>
+              <h2>Contact</h2>
+              <p>Open to Unity Developer / Mobile Game Developer opportunities.</p>
+            </div>
+            <div class="contact-actions">
+              <a class="btn" href="mailto:your.email@example.com">Email</a>
+              <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+</div>
+</body>
+</html>
