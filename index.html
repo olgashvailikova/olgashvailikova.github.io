@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Olga Shvailikova — Unity Game Developer</title>
-  <meta name="description" content="Olga Shvailikova — Unity Game Developer portfolio with selected released mobile and WebGL projects." />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Olga Shvailikova — Unity Game Developer</title>
+<meta content="Olga Shvailikova — Unity Game Developer portfolio with selected released mobile and WebGL projects." name="description"/>
+<style>
     :root {
       --bg: #f7f8fb;
       --card: #ffffff;
@@ -213,7 +214,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -222,7 +223,7 @@
       border: 1px solid var(--line);
       border-radius: 20px;
       padding: 20px;
-      min-height: 265px;
+      min-height: 330px;
       display: flex;
       flex-direction: column;
       gap: 13px;
@@ -274,6 +275,27 @@
       font-size: 0.86rem;
       font-weight: 700;
       margin-top: 4px;
+    }
+
+
+    .project-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: -2px;
+    }
+
+    .project-fact {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .project-card p {
@@ -352,250 +374,221 @@
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="container nav">
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Selected Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="eyebrow">Unity Game Developer</div>
-        <h1>Olga Shvailikova</h1>
-        <p class="hero-text">
-          Unity Game Developer with experience in game development and previous native Android development experience.
-        </p>
-        <p class="hero-text">
-          Worked on 15+ released games at Kidga Games, including full-cycle development from prototype to release,
-          long-term project support, optimization, SDK integrations, monetization, analytics and live configuration.
-        </p>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-title">
-          <div class="section-icon">◎</div>
-          <h2>About</h2>
-        </div>
-        <div class="about-card">
-          <p>
-            I focus on building clear, reliable architecture and delivering performant solutions for games.
-            My work covers prototypes, core gameplay systems, UI, optimization, release preparation, long-term project maintenance, scalable architecture and technical decision-making.
-          </p>
-          <p>
-            I am comfortable working with both new and legacy codebases, taking ownership of complex technical tasks
-            and adapting projects to different platform requirements.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-title">
-          <div class="section-icon">◈</div>
-          <h2>Selected Projects</h2>
-        </div>
-        <p class="section-lead">
-          A selection of released mobile games developed or supported at Kidga Games. This is not a full list of all released titles.
-        </p>
-
-        <div class="projects-grid">
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/7FVkPTPlA19vvhzuHPb-qi0-Ee0a5UMi6sTnbHG4tPWW2jH9_dH4YdZb9877MzIsL5E%3Dw240-h480" alt="Gravity Race / Dash Run app icon" loading="lazy" />
-                <div>
-                  <h3>Gravity Race / Dash Run</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity, from the initial prototype and gameplay systems to a production-ready mobile release.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.gravity.race" target="_blank" rel="noopener">Google Play →</a>
-<a class="project-link" href="https://apps.apple.com/app/dash-run/id6777432643" target="_blank" rel="noopener">App Store →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/ZMA5PTxwkcwVLttq3yqfjQmS55UH_2vWCGR0aakpdHrrXTIQVjWOjE5hKbjvaAaObs9ygknm3vzNBuhTjKy7QA%3Dw240-h480" alt="Geometry Loop app icon" loading="lazy" />
-                <div>
-                  <h3>Geometry Loop</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity, from the initial prototype and gameplay systems to Android/iOS production release.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.loop" target="_blank" rel="noopener">Google Play →</a>
-<a class="project-link" href="https://apps.apple.com/app/geometry-loop/id6777051553" target="_blank" rel="noopener">App Store →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/6D0MUAfmC8FwR5NbEc5TQjn6O4cW3ayIxczxVUE4k-INzNmjV3h6F9zjvagf7gIymf3zIINaPLfBj_ymmGkDMw%3Dw240-h480" alt="Word Craft app icon" loading="lazy" />
-                <div>
-                  <h3>Word Craft</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a multi-mode word puzzle game.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.word.craft" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/mCx75sGEDkxIidrb6Z1_U3GIF2TCaIK1Jz-kIZCfH-2_LxAqqs6E0GDuLH-R0R7_GGtAX6_rHG6J3H9cjUmN_w%3Dw240-h480" alt="Vectoria app icon" loading="lazy" />
-                <div>
-                  <h3>Vectoria</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a logic/strategy puzzle game.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.vector" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/OhvWVo_nJT229SSBp5XFSN0ad4-64GGDBmVVLrL5A7d9H4QKZCDi2pCxins5BI7dgCrXwURip8yq3vl_HNAjUQ%3Dw240-h480" alt="Snake it! app icon" loading="lazy" />
-                <div>
-                  <h3>Snake it!</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a one-tap arcade/reflex game.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.snake.it" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/aY0HRtcY3weFZXLAwvcaUnsvtOOco2nJVNrnWerNO3opTKVp5Kg_cyN7QsKfT4jLa3DOu4tLnQC5VMK0c0b5%3Dw240-h480" alt="Golf Islands app icon" loading="lazy" />
-                <div>
-                  <h3>Golf Islands</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a mobile golf game with relaxed gameplay and level-based progression.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.golf" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/uiJ7geVoLnqybjiM2aph3aMy5xTV1zP13d9m-w46w3yz4MvbAa3WiMIlrGBlb0lhIi9X%3Dw240-h480" alt="Paradise Puzzle app icon" loading="lazy" />
-                <div>
-                  <h3>Paradise Puzzle</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a mobile puzzle game with relaxing visual style and level-based gameplay.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.paradise.puzzle" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/F0aL5MK5TW5bYYcpePDwOOj_DF9AVdnWW3irwrPnGs4NNtPR-pWJrQDYRmOoevgj13dt%3Dw240-h480" alt="Logic Club app icon" loading="lazy" />
-                <div>
-                  <h3>Logic Club</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a logic puzzle / brain-training game with multiple mini-games and varied gameplay mechanics.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.logic.club" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/0rWNTce0aKBMZ5aItPMhWr1-KH7xT0Z1bVId7V-ad7nJCo4jIAeoeVwdEcQkjyf4XmM3N5qT2WtUR5LXUOMu7A%3Dw240-h480" alt="Elements Box app icon" loading="lazy" />
-                <div>
-                  <h3>Elements Box</h3>
-                  <div class="meta">Solo Unity Developer</div>
-                </div>
-              </div>
-              <p>Built from scratch in Unity as a spatial logic puzzle game with path/maze-based puzzle flow and level progression.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.elements.flow" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/nhIH5j_CAdfyX8EYIHr8n1HORq85_MNB12nuwITmyiS50KWKAQl2IDUoCGmcqCy3jrezYa3lV2sC9MtULhW3lw%3Dw240-h480" alt="Pathman / Maze Runner app icon" loading="lazy" />
-                <div>
-                  <h3>Pathman / Maze Runner</h3>
-                  <div class="meta">Unity Developer</div>
-                </div>
-              </div>
-              <p>Worked on meta-game systems, UI screens, animations, progression-related flows, mobile interface polish and production support.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.maze.paxman" target="_blank" rel="noopener">Google Play →</a>
-<a class="project-link" href="https://apps.apple.com/us/app/pathman-maze-runner/id6777446090" target="_blank" rel="noopener">App Store →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <img class="project-icon" src="https://play-lh.googleusercontent.com/gyDFAp24ghyQJ3_Kk3S-xVeT7ioSZw8Gt-xEK8A_1xAkr44rP0IRtYQ-DDptD4WlFdmzx4BeJ06WxgKwG-ixYg%3Dw240-h480" alt="Cryptex / Word Cryptex app icon" loading="lazy" />
-                <div>
-                  <h3>Cryptex / Word Cryptex</h3>
-                  <div class="meta">Unity Developer</div>
-                </div>
-              </div>
-              <p>Worked on UI implementation, analytics events, advertising integration, monetization-related flows and production polish.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.cryptex" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <div class="project-icon fallback" aria-hidden="true">+</div>
-                <div>
-                  <h3>Other Kidga Games</h3>
-                  <div class="meta">Additional released projects</div>
-                </div>
-              </div>
-              <p>Other released mobile puzzle, logic, word and arcade games developed or supported at Kidga Games. Work included Unity development, gameplay systems, UI, third-party SDK integrations, ads and monetization, Firebase services, cloud saves, localization, scalable architecture, production polish, mobile optimization, release preparation and related production tasks.</p>
-              <div class="project-actions">
-                <a class="project-link" href="https://play.google.com/store/apps/developer?id=Kidga" target="_blank" rel="noopener">Google Play →</a>
-              </div>
-            </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact-card">
-          <h2>Contact</h2>
-          <div class="contact-actions">
-            <a class="btn" href="mailto:o.shvailikova@gmail.com">Email</a>
-            <a class="btn" href="http://www.linkedin.com/in/shvailikova" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn" href="https://t.me/oshvailikova" target="_blank" rel="noopener">Telegram</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<header>
+<div class="container nav">
+<nav aria-label="Main navigation" class="nav-links">
+<a href="#about">About</a>
+<a href="#projects">Selected Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container hero-content">
+<div class="eyebrow">Unity Game Developer</div>
+<h1>Olga Shvailikova</h1>
+<p class="hero-text">Unity Game Developer with 5+ years of commercial Unity/C# experience and a previous background in native Android/Java development.</p>
+<p class="hero-text">Worked on 15+ released games at Kidga Games, from initial prototypes and gameplay systems to production releases, live support, optimization, SDK integrations, monetization, analytics and content delivery.</p>
+</div>
+</section>
+<section id="about">
+<div class="container">
+<div class="section-title">
+<div class="section-icon">◎</div>
+<h2>About</h2>
+</div>
+<div class="about-card">
+<p>I focus on building clear, reliable gameplay and application architecture and taking features from an early prototype to a production-ready implementation. My work covers core gameplay, UI, content systems, editor tools, optimization, releases and long-term product development.</p>
+<p>I have experience with both greenfield and existing codebases, owning technical features end to end, debugging production issues, integrating external services and adapting games for Android, iOS and WebGL.</p>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="container">
+<div class="section-title">
+<div class="section-icon">◈</div>
+<h2>Selected Projects</h2>
+</div>
+<p class="section-lead">Selected released projects with the scope of my work, project scale, team size and key technical contributions. This is not a full list of all released titles.</p>
+<div class="projects-grid">
+<article class="project-card">
+<div class="project-top">
+<img alt="Gravity Race / Dash Run app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/7FVkPTPlA19vvhzuHPb-qi0-Ee0a5UMi6sTnbHG4tPWW2jH9_dH4YdZb9877MzIsL5E%3Dw240-h480"/>
+<div>
+<h3>Gravity Race / Dash Run</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android · iOS · WebGL</span><span class="project-fact">100K+ downloads</span></div><p>Implemented physics-based gameplay, multiple game modes, UI, checkpoint/reward systems and production integrations. Built a level/content pipeline with configurable and user-created levels, remote level/config delivery, and a ghost-based competitive mode using a REST backend.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.gravity.race" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://apps.apple.com/app/dash-run/id6777432643" rel="noopener" target="_blank">App Store →</a>
+<a class="project-link" href="https://youtube.com/playables/UgkxgHNC-3W5vtlJjX0cWW-2JLHhEq3PdJm_?si=ium-jTpkZy-0fSZP" rel="noopener" target="_blank">WebGL / YouTube Playable →</a></div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Geometry Loop app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/ZMA5PTxwkcwVLttq3yqfjQmS55UH_2vWCGR0aakpdHrrXTIQVjWOjE5hKbjvaAaObs9ygknm3vzNBuhTjKy7QA%3Dw240-h480"/>
+<div>
+<h3>Geometry Loop</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android · iOS</span></div><p>Implemented the physics-driven core loop, multiple game modes, UI, checkpoints and replay/hint systems, together with remote level/config support, monetization flows and mobile performance tuning.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.loop" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://apps.apple.com/app/geometry-loop/id6777051553" rel="noopener" target="_blank">App Store →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Word Craft app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/6D0MUAfmC8FwR5NbEc5TQjn6O4cW3ayIxczxVUE4k-INzNmjV3h6F9zjvagf7gIymf3zIINaPLfBj_ymmGkDMw%3Dw240-h480"/>
+<div>
+<h3>Word Craft</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android · WebGL</span><span class="project-fact">3 game modes · up to 16 languages</span></div><p>Built shared gameplay, UI and content systems for three modes — Collect Words, Merge Words and Merge Images — with separate progression, localization, Addressables-based loading and WebGL optimization.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.word.craft" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://youtube.com/playables/UgkxBDKxWjTa-7ZrZ0m3Whh1YKmFBuxG_Uyl?si=PbRhOXPT5StwIbf5" rel="noopener" target="_blank">WebGL / YouTube Playable →</a></div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Vectoria app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/mCx75sGEDkxIidrb6Z1_U3GIF2TCaIK1Jz-kIZCfH-2_LxAqqs6E0GDuLH-R0R7_GGtAX6_rHG6J3H9cjUmN_w%3Dw240-h480"/>
+<div>
+<h3>Vectoria</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android · WebGL</span></div><p>Built modular board-gameplay systems with configurable objectives, obstacles and boosters, a solver/hint system, UI and asynchronous flows using UniTask/async-await. The architecture supports adding and tuning puzzle content without changing core gameplay code.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.vector" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://youtube.com/playables/UgkxD4h8jvhOdPko0nTwfq7aYgGBkAFS6cg0?si=v0IPXe6sHzeqLusU" rel="noopener" target="_blank">WebGL / YouTube Playable →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Snake it! app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/OhvWVo_nJT229SSBp5XFSN0ad4-64GGDBmVVLrL5A7d9H4QKZCDi2pCxins5BI7dgCrXwURip8yq3vl_HNAjUQ%3Dw240-h480"/>
+<div>
+<h3>Snake it!</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android</span></div><p>Implemented the one-tap arcade loop, input and game-state handling, session/restart flow, UI and mobile gameplay tuning.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.snake.it" rel="noopener" target="_blank">Google Play →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Golf Islands app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/aY0HRtcY3weFZXLAwvcaUnsvtOOco2nJVNrnWerNO3opTKVp5Kg_cyN7QsKfT4jLa3DOu4tLnQC5VMK0c0b5%3Dw240-h480"/>
+<div>
+<h3>Golf Islands</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android</span></div><p>Implemented the core mobile golf gameplay, level-based flow, UI, progression and systems used to configure and ship levels.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.golf" rel="noopener" target="_blank">Google Play →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Paradise Puzzle app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/uiJ7geVoLnqybjiM2aph3aMy5xTV1zP13d9m-w46w3yz4MvbAa3WiMIlrGBlb0lhIi9X%3Dw240-h480"/>
+<div>
+<h3>Paradise Puzzle</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android</span></div><p>Built the core puzzle loop, UI and a dynamic level system used to create varied puzzle layouts and support configurable gameplay rules.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.paradise.puzzle" rel="noopener" target="_blank">Google Play →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Logic Club app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/F0aL5MK5TW5bYYcpePDwOOj_DF9AVdnWW3irwrPnGs4NNtPR-pWJrQDYRmOoevgj13dt%3Dw240-h480"/>
+<div>
+<h3>Logic Club</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android · WebGL</span><span class="project-fact">11 game modes · 100K+ downloads</span></div><p>Evolved the architecture as the game expanded to a core logic-question game plus 10 mini-games. Built reusable UI/content flows, versioned remote content/configuration and procedural generation/validation for puzzle content, including Sudoku solvability checks. Later adapted the project for WebGL / YouTube Playables.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.logic.club" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://youtube.com/playables/Ugkx68iHsrdBUkqnSKHtisRTcupJSkRRWTGo?si=jz9Su-Sbrw3y16v8" rel="noopener" target="_blank">WebGL / YouTube Playable →</a></div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Elements Box app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/0rWNTce0aKBMZ5aItPMhWr1-KH7xT0Z1bVId7V-ad7nJCo4jIAeoeVwdEcQkjyf4XmM3N5qT2WtUR5LXUOMu7A%3Dw240-h480"/>
+<div>
+<h3>Elements Box</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">From prototype to release</span><span class="project-fact">Team size: 4</span><span class="project-fact">Android</span></div><p>Implemented the spatial/path-based puzzle mechanics, level flow, UI and content/configuration systems, with a focus on clear interaction logic and maintainable level setup.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.elements.flow" rel="noopener" target="_blank">Google Play →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Pathman / Maze Runner app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/nhIH5j_CAdfyX8EYIHr8n1HORq85_MNB12nuwITmyiS50KWKAQl2IDUoCGmcqCy3jrezYa3lV2sC9MtULhW3lw%3Dw240-h480"/>
+<div>
+<h3>Pathman / Maze Runner</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">Existing live project</span><span class="project-fact">Team size: 5</span><span class="project-fact">Android · iOS</span><span class="project-fact">1M+ downloads</span></div><p>Added a new Adventure/Escape mode to an established live game and worked on meta-game systems, major UI flows, animations, progression and monetization. Also handled remote balance/configuration, SDK and analytics updates, iOS release support, and stability/performance improvements.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.maze.paxman" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://apps.apple.com/us/app/pathman-maze-runner/id6777446090" rel="noopener" target="_blank">App Store →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<img alt="Cryptex / Word Cryptex app icon" class="project-icon" loading="lazy" src="https://play-lh.googleusercontent.com/gyDFAp24ghyQJ3_Kk3S-xVeT7ioSZw8Gt-xEK8A_1xAkr44rP0IRtYQ-DDptD4WlFdmzx4BeJ06WxgKwG-ixYg%3Dw240-h480"/>
+<div>
+<h3>Cryptex / Word Cryptex</h3>
+<div class="meta">Unity Developer</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">Existing live project</span><span class="project-fact">Team size: 5</span><span class="project-fact">Android · WebGL</span></div><p>Implemented and maintained UI flows, analytics events, advertising and rewarded-hint functionality, monetization systems and third-party integrations for an existing production project.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/details?id=com.kidga.cryptex" rel="noopener" target="_blank">Google Play →</a>
+<a class="project-link" href="https://youtube.com/playables/Ugkx_b6PdkquMn1HlxB5RWkX4q_rodoxth7D?si=_qouwcxJ60HsDmp7" rel="noopener" target="_blank">WebGL / YouTube Playable →</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-top">
+<div aria-hidden="true" class="project-icon fallback">+</div>
+<div>
+<h3>Other Kidga Games</h3>
+<div class="meta">Additional released projects</div>
+</div>
+</div>
+<div class="project-facts"><span class="project-fact">15+ released games and applications</span></div><p>Additional released puzzle, logic, word and arcade projects developed or supported at Kidga Games. Contributions across the portfolio included gameplay and application systems, UI, reusable architecture, editor/content tools, localization, ads and monetization, analytics, Firebase services, cloud saves, third-party SDK integrations, mobile optimization, release preparation and live production support.</p>
+<div class="project-actions">
+<a class="project-link" href="https://play.google.com/store/apps/developer?id=Kidga" rel="noopener" target="_blank">Google Play →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<div class="contact-card">
+<h2>Contact</h2>
+<div class="contact-actions">
+<a class="btn" href="mailto:o.shvailikova@gmail.com">Email</a>
+<a class="btn" href="http://www.linkedin.com/in/shvailikova" rel="noopener" target="_blank">LinkedIn</a>
+<a class="btn" href="https://t.me/oshvailikova" rel="noopener" target="_blank">Telegram</a>
+</div>
+</div>
+</div>
+</section>
+</main>
 </body>
 </html>
